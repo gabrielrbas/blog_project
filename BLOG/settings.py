@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'categorias',
     'comentarios',
 ]
+INSTALLED_APPS += ('django_summernote', )
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
