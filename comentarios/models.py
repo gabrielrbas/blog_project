@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 
 
-class Comantario(models.Model):
+class Comentario(models.Model):
     nome_comentario = models.CharField(max_length=150)
     email_comentario = models.EmailField()
     comentario = models.TextField()
