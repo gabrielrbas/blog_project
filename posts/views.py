@@ -13,15 +13,15 @@ class PostIndex(ListView):
 
     def get_queryset(self):
         qs = super().get_queryset()
-        qs = qs.order_by('-id')
-        return qs
+        qs = qs.order_by('-id').filter(publicado_post=True)
         qs = qs.annotate(
-            numero_comentario=Count(
+            numero_comentarios=Count(
                 Case(
                     When(comentario__publicado_comentario=True, then=1)
                 )
             )
         )
+        return qs
 
 
 class PostBusca(PostIndex):
